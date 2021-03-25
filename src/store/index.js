@@ -380,14 +380,14 @@ export default new Vuex.Store({
         try
         {
           let response = await axios.post('register', registerInfo)
-          let user = response.config.data;
+          let user = response.data.data;
           // eslint-disable-next-line no-console
           console.log(user);
           commit('SET_CURRENT_USER', user);
           return user;
         }
         catch{
-           return {error: "Check all your details and try again"}
+           return {error: "Kindly Check all your details and try again!"}
         }
 
         

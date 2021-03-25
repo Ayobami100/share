@@ -1,11 +1,18 @@
 <template>
 <v-content>
-<div v-for="item in items" :key="item.id"> 
-  {{ item.name }}
-<v-btn @click="loginUser(item)">Log In</v-btn>
-
-</div>
+  <template v-slot:activator="{ on }">
+        <v-btn
+          text
+          v-on="on"
+        >
+          <v-icon left>expand_more</v-icon>
+            <span>Menu</span>
+        </v-btn>
+      </template>
 </v-content>
+
+
+
 
   <!-- <div class="team">
     <div>

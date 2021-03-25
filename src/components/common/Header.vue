@@ -1,6 +1,6 @@
 <template>
   <v-toolbar flat class="mainHeader green pa-0 ma-0">
-      <v-toolbar-title>ShareYaSpace</v-toolbar-title>
+      <v-toolbar-title ><v-btn text to="/" class="title white--text">ShareYaSpace</v-btn></v-toolbar-title>
       
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only" v-if="!currentUser.firstname">
@@ -19,8 +19,8 @@
       </v-toolbar-items>
 
       <v-toolbar-items class="hidden-xs-only" v-if="currentUser.firstname">
-        <v-btn >{{currentUser.firstname}}</v-btn>
-        <v-btn @click="logoutUser" color="white"><v-icon color="white">mdi-signout
+        <v-btn text class="heading-1" weight="200">{{currentUser.firstname}}</v-btn>
+        <v-btn @click="logoutUser" text color="white"><v-icon color="white">mdi-logout
           </v-icon>LogOut</v-btn>
 
       </v-toolbar-items>

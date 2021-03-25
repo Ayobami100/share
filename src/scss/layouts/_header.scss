@@ -1,0 +1,38 @@
+header {
+  .v-toolbar__title {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $white;
+  }
+
+  .v-toolbar__content {
+    @media only screen and (max-width: 599px) {
+      padding: 0;
+    }
+  }
+}
+.barActive,
+.v-btn:hover,
+.v-btn:focus {
+  transition: all 0.3s linear;
+  background: #032906;
+  color: #fff;
+  outline: none;
+}
+.mainHeader {
+  padding: 0;
+  margin: 0;
+  .v-toolbar__items {
+    .v-btn__content {
+      a {
+        color: $white;
+      }
+    }
+
+    .v-btn {
+      @media only screen and (max-width: 599px) {
+        padding: 0 0 0 10px;
+      }
+    }
+  }
+}

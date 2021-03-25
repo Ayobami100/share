@@ -4,23 +4,24 @@
       
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only" v-if="!currentUser.firstname">
-        <v-btn text :class="{ barActive: layout === 'home' }" @click="layout = 'home'"><v-icon color="white">mdi-home</v-icon><router-link to="/">Home</router-link></v-btn>
-        <v-btn text :class="{ barActive: layout === 'about' }" @click="layout = 'about'"><v-icon color="white">mdi-information-variant</v-icon><router-link to="/about">About</router-link></v-btn>
-        <v-btn text :class="{ barActive: layout === 'contact' }" @click="layout = 'contact'"><v-icon color="white">mdi-contacts</v-icon><router-link to="/contact">Contact</router-link></v-btn>
+        <v-btn text to="/" color="white"><v-icon >mdi-home</v-icon>Home</v-btn>
+        <v-btn text to="/about" color="white"><v-icon >mdi-information-variant</v-icon>About</v-btn>
+        <v-btn text to="/contact" color="white"><v-icon >mdi-contacts</v-icon>Contact</v-btn>
         
-         <v-btn text :class="{ barActive: layout === 'register' }" @click="layout = 'register'"><v-icon color="white">mdi-book-check</v-icon><router-link to="/register">Register</router-link></v-btn>
-          <v-btn text :class="{ barActive: layout === 'login' }" @click="layout = 'login'"><v-icon color="white">mdi-login</v-icon><router-link to="/login">Login</router-link></v-btn>
-          <div class="ma-3">
+        
+          <v-btn text to="/login" color="white"><v-icon >mdi-login</v-icon>Login</v-btn>
+           <v-btn color="warning" to="/register"><v-icon >mdi-book-check</v-icon>Register</v-btn>
+          <!-- <div class="ma-3">
             
             <v-btn rounded color="warning" ><v-icon color="white" label="Append inner" >mdi-signature-text</v-icon><router-link to="/spacecreate/new">Add your listings</router-link></v-btn>
-          </div>
+          </div> -->
          
       </v-toolbar-items>
 
       <v-toolbar-items class="hidden-xs-only" v-if="currentUser.firstname">
         <v-btn >{{currentUser.firstname}}</v-btn>
-        <v-btn @click="logoutUser"><v-icon color="white">mdi-home
-          </v-icon><router-link to="#" >LogOut</router-link></v-btn>
+        <v-btn @click="logoutUser" color="white"><v-icon color="white">mdi-signout
+          </v-icon>LogOut</v-btn>
 
       </v-toolbar-items>
 
@@ -61,8 +62,17 @@
           </v-list>
         </v-menu>
       </div>
-    </v-toolbar>
-  
+  </v-toolbar>
+
+  <!-- <v-toolbar>
+    <v-toolbar-title>ShareYaSpace</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items>
+      <v-btn to="/">Home</v-btn>
+      <v-btn to="/register">Register</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
+   -->
 </template>
 
 <script>

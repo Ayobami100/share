@@ -2,18 +2,21 @@
 <v-content>
   <v-container>
     <v-div>
-    <v-div class="mt-20" >
-      <h1 class="display-1">Nearby Places</h1>
+    <v-div class="" >
+      <h1 class="display-1 ma-10">Nearby Places</h1>
     </v-div>
     
     <v-row  class="fill-height">
       <v-col v-for="nearby in nearbys" :key="nearby.id" cols="4" md="2" sm="2">
-        <img :src="nearby.src"/>
+        <div>
+<img :src="nearby.src"/>
         <v-col>
           <h3 class="font-weight-bold">{{nearby.name}}</h3>
           <p class="subtitle-1">{{nearby.Space}}</p>
           <p class="subtitle-2">{{nearby.description}}</p>
         </v-col>
+        </div>
+        
         
       </v-col>
 

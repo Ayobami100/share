@@ -1,23 +1,34 @@
 <template>
 <v-content>
-  <template v-slot:activator="{ on }">
-        <v-btn
-          text
-          v-on="on"
-        >
-          <v-icon left>expand_more</v-icon>
-            <span>Menu</span>
-        </v-btn>
-      </template>
+  <v-container>
+    <v-div>
+    <v-div class="mt-20" >
+      <h1 class="display-1">Nearby Places</h1>
+    </v-div>
+    
+    <v-row  class="fill-height">
+      <v-col v-for="nearby in nearbys" :key="nearby.id" cols="4" md="2" sm="2">
+        <img :src="nearby.src"/>
+        <v-col>
+          <h3 class="font-weight-bold">{{nearby.name}}</h3>
+          <p class="subtitle-1">{{nearby.Space}}</p>
+          <p class="subtitle-2">{{nearby.description}}</p>
+        </v-col>
+        
+      </v-col>
+
+    </v-row>
+
+      
+  </v-div>
+  </v-container>
 </v-content>
 
 
 
 
   <!-- <div class="team">
-    <div>
-        <Navbar />
-      </div>
+    
     <h1 class="subheading grey--text">Dashboard</h1>
     <v-content >
       
@@ -135,9 +146,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
-// import Navbar from "../../components/Dashboard/Navbar";
+// import Navbar from "../../components/Dashboard/Navbar"
 
 export default {
 
@@ -146,7 +156,7 @@ export default {
 
   data(){
     return{
-      items: this.$store.state.items,
+      nearbys: this.$store.state.nearbys,
 
  team: [
       { name: "Iyad", role: "web developer", avatar: "/img1.png" },
@@ -157,6 +167,10 @@ export default {
     ],
       user:null,
     };
+  },
+
+   components: {
+    // Navbar,
   },
     
 methods:{

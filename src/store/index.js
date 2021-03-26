@@ -334,6 +334,85 @@ export default new Vuex.Store({
               src: require("../assets/house/1.jpg")
           }
         ],
+        nearbys:[
+          {
+            id: 1,
+            name: "Osun State",
+            Space:"Available Spaces - 35",
+            description: "Small plates.",
+            src: require("../assets/images/img2.jpg")
+          },
+          {
+            id: 2,
+            name: "Kwara State",
+            Space:"Available Spaces - 30",
+            description: "Small Chops.",
+            src: require("../assets/images/img2.jpg")
+          },
+            {
+            id: 3,
+            name: "Plateau State",
+            Space:"Available Spaces - 95",
+            description: "Small plates.",
+            src: require("../assets/images/img2.jpg")
+          },
+           {
+            id: 4,
+            name: "Lagos State",
+            Space:"Available Spaces - 85",
+            description: "Small plates.",
+            src: require("../assets/images/img2.jpg")
+          },
+            {
+            id: 5,
+            name: "Oyo State",
+            Space:"Available Spaces - 15",
+            description: "Small plates.",
+            src: require("../assets/images/img2.jpg")
+          },
+           {
+            id: 6,
+            name: "Ekiti State",
+            Space:"Available Spaces - 5",
+            description: "Small plates.",
+            src: require("../assets/images/img2.jpg")
+          },
+          {
+          id: 7,
+          name: "Abia State",
+          Space:"Available Spaces - 3",
+          description: "Small plates.",
+          src: require("../assets/images/img2.jpg")
+        },
+        {
+          id: 8,
+          name: "Anambra State",
+          Space:"Available Spaces - 35",
+          description: "Small plates.",
+          src: require("../assets/images/img2.jpg")
+        },
+          {
+          id: 9,
+          name: "Kano State",
+          Space:"Available Spaces - 35",
+          description: "Small plates.",
+          src: require("../assets/images/img2.jpg")
+        },
+         {
+          id: 10,
+          name: "FCT",
+          Space:"Available Spaces - 35",
+          description: "Small plates.",
+          src: require("../assets/images/img2.jpg")
+        },
+        {
+        id: 11,
+        name: "Kaduna State",
+        Space:"Available Spaces - 35",
+        description: "Small plates.",
+        src: require("../assets/images/img2.jpg")
+      },
+        ],
 
         currentUser:{}
     },

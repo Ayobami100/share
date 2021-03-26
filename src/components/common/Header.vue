@@ -19,14 +19,51 @@
       </v-toolbar-items>
 
       <v-toolbar-items class="hidden-xs-only" v-if="currentUser.firstname">
+        <div class="overflow-hidden">
+              <div class="text-center mb-8">
+                <v-btn
+                  color="deep-purple"
+                  outlined
+                  @click="active = !active"
+                >
+                  Menu
+                </v-btn>
+              </div>
+
+              <v-bottom-navigation
+                v-model="value"
+                :input-value="active"
+                color="indigo"
+              >
+                <v-btn>
+                  <span>Recents</span>
+
+                  <v-icon>mdi-history</v-icon>
+                </v-btn>
+
+                <v-btn>
+                  <span>Favorites</span>
+
+                  <v-icon>mdi-heart</v-icon>
+                </v-btn>
+
+                <v-btn>
+                  <span>Nearby</span>
+
+                  <v-icon>mdi-map-marker</v-icon>
+                </v-btn>
+              </v-bottom-navigation>
+            </div>
         <v-btn text class="heading-1" weight="200">{{currentUser.firstname}}</v-btn>
         <v-btn @click="logoutUser" text color="white"><v-icon color="white">mdi-logout
           </v-icon>LogOut</v-btn>
 
+            
+
       </v-toolbar-items>
 
-      <div class="hidden-sm-and-up" v-if="!currentUser.firstname">
-        <v-menu offset-y v-model="selectedItem" color="primary">
+<div class="hidden-sm-and-up" v-if="!currentUser.firstname">
+  <v-menu offset-y v-model="selectedItem" color="primary">
           <template v-slot:activator="{ on }">
             <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
           </template>
@@ -76,28 +113,30 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 
 export default {
   name: "Header",
-  
+
   data() {
-    return{
+    return {
       layout: "home",
-       
-    }
+
+      value: 1,
+      active: false,
+    };
   },
-computed:{
-  ...mapState(['currentUser'])
-},
-  methods:{
-   logoutUser(){
+  computed: {
+    ...mapState(["currentUser"]),
+  },
+  methods: {
+    logoutUser() {
       // localStorage.removeItem('token');
 
       // this.$router.push('/');
 
-      this.$store.dispatch("logoutUser")
-    }
-  }
+      this.$store.dispatch("logoutUser");
+    },
+  },
 };
 </script>

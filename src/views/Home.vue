@@ -1,8 +1,9 @@
 
 <template>
   <v-content>
-    <Hero />
     
+    <Hero />
+    <Nearby/>
     <LatestPost />
    
   </v-content>
@@ -11,27 +12,29 @@
 <script>
   import Hero from "../components/Hero";
   import LatestPost from "../components/LatestPost";
-  import axios from 'axios';
+   import Nearby from "../components/common/Nearby";
+  // import axios from 'axios';
 
   export default {
     name: "Home",
 
     components: {
       Hero,
-      LatestPost
+      LatestPost,
+      Nearby,
     },
 
-    async created(){
+    // async created(){
      
-    const response = await axios.get('user',{
-      headers:{
-        Authorization: 'Bearer ' + localStorage.getItem('token')
-      }
-    });
+    // const response = await axios.get('user',{
+    //   headers:{
+    //     Authorization: 'Bearer ' + localStorage.getItem('token')
+    //   }
+    // });
 
     // this.user = response.data;
-  // eslint-disable-next-line no-console
-  console.log(response);
-  },
+  // // eslint-disable-next-line no-console
+  // console.log(response);
+  
   };
 </script>

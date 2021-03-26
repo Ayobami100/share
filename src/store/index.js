@@ -390,28 +390,7 @@ export default new Vuex.Store({
           Space:"Available Spaces - 35",
           description: "Small plates.",
           src: require("../assets/images/img2.jpg")
-        },
-          {
-          id: 9,
-          name: "Kano State",
-          Space:"Available Spaces - 35",
-          description: "Small plates.",
-          src: require("../assets/images/img2.jpg")
-        },
-         {
-          id: 10,
-          name: "FCT",
-          Space:"Available Spaces - 35",
-          description: "Small plates.",
-          src: require("../assets/images/img2.jpg")
-        },
-        {
-        id: 11,
-        name: "Kaduna State",
-        Space:"Available Spaces - 35",
-        description: "Small plates.",
-        src: require("../assets/images/img2.jpg")
-      },
+        }
         ],
 
         currentUser:{}

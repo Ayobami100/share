@@ -30,7 +30,7 @@
         <v-row class="mt-20">
           <v-col class="d-flex child-flex" cols="12" sm="6">
             <v-img class="img-style"
-          src="https://picsum.photos/510/300?random"
+          src="../assets/images/img2.jpg"
           aspect-ratio="1.7"
         ></v-img>
           </v-col>
@@ -61,7 +61,7 @@
 
           <v-col class="d-flex child-flex" cols="12" sm="6">
             <v-img class="img-style"
-          src="https://picsum.photos/510/300?random"
+          src="../assets/images/img1.jpg"
           aspect-ratio="2.1"
         ></v-img>
           </v-col>
@@ -70,7 +70,7 @@
         <v-row class="mt-10">
           <v-col class="d-flex child-flex" cols="12" sm="6">
             <v-img class="img-style"
-          src="https://picsum.photos/510/300?random"
+          src="../assets/images/img3.jpg"
           aspect-ratio="1.7"
         ></v-img>
           </v-col>
@@ -110,63 +110,48 @@
     >
       mdi-dialpad
     </v-icon>
-          </v-col>
+  </v-col>
          
-        </v-row>
+</v-row>
 
-        <v-row class="mt-10">
-          <v-col class="d-flex " cols="12" sm="12">
-            <v-img class="img-style"
-          src="https://picsum.photos/510/300?random"
-          aspect-ratio="5.1"
-        >
-        <div class="d-flex justify-center align-start">
-          <v-btn >Explore Now</v-btn>
+  <v-row class="mt-10">
+    <v-col class="d-flex " cols="12" sm="12">
+      <v-img class="img-style"
+    src="https://picsum.photos/510/300?random"
+    aspect-ratio="5.1"
+  >
+    <div class="d-flex justify-center align-start">
+      <v-btn >Explore Now</v-btn>
 
-        </div>
-        <div>
-           <v-img class="img-style"
+    </div>
+    <div>
+      <v-img class="img-style"
           src="https://picsum.photos/510/300?random"
           aspect-ratio="7.1"
         ></v-img>
-        </div>
-          <!-- <v-row>
-            <v-col
-              v-for="n in 9"
-              :key="n"
-              class="d-flex child-flex"
-              cols="4"
-            >
-              <v-img
-                :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-                aspect-ratio="1"
-                class="grey lighten-2"
-              >
-                <template v-slot:placeholder>
-                  <v-row
-                    class="fill-height ma-0"
-                    align="center"
-                    justify="center"
-                  >
-                    <v-progress-circular
-                      indeterminate
-                      color="grey lighten-5"
-                    ></v-progress-circular>
-                  </v-row>
-                </template>
-              </v-img>
-            </v-col>
-          </v-row>
-        </div> -->
-         </v-img>
-       
-          </v-col>
-         
-        </v-row>
-      </v-container>
     </div>
-  </v-content>
+  </v-img>
+</v-col>
+
+</v-row>
+<v-row>
+  <v-expansion-panels>
+    <v-expansion-panel
+      v-for="(item,i) in 5"
+      :key="i"
+    >
+      <v-expansion-panel-header>
+        Item
+      </v-expansion-panel-header>
+      <v-expansion-panel-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
+</v-row>
+  </v-container>
+</div>
+</v-content>
 </template>
 
 <style scoped>

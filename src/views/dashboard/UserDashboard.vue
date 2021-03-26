@@ -3,19 +3,21 @@
   <v-container>
     <v-div>
     <v-div class="" >
-      <h1 class="display-1 ma-10">Nearby Places</h1>
+      <h1 class="display-1 ma-5">Nearby Places</h1>
     </v-div>
     
     <v-row  class="fill-height">
-      <v-col v-for="nearby in nearbys" :key="nearby.id" cols="4" md="2" sm="2">
-        <div>
-<img :src="nearby.src"/>
-        <v-col>
-          <h3 class="font-weight-bold">{{nearby.name}}</h3>
-          <p class="subtitle-1">{{nearby.Space}}</p>
-          <p class="subtitle-2">{{nearby.description}}</p>
-        </v-col>
+      <v-col v-for="nearby in nearbys" :key="nearby.id" cols="4" md="3" sm="3">
+       <div class="d-flex justify-space-between">
+          <div >
+          <img :src="nearby.src" class="img-res"/>
         </div>
+        <div>
+          <h6 class="font-weight-bold">{{nearby.name}}</h6>
+          <p class="success--text text--darken-1">{{nearby.Space}}</p>
+          <p class="warning--text text--darken-1">{{nearby.description}}</p>    
+        </div>
+       </div>
         
         
       </v-col>
@@ -190,5 +192,9 @@ this.$store.dispatch('loginUser',user)
 .dash{
   border: 1px black solid;
   height: 500px;
+}
+.img-res{
+  width: 100px;
+  height: 100px;
 }
 </style>

@@ -2,68 +2,75 @@
   <v-toolbar flat class="mainHeader green pa-0 ma-0">
       <v-toolbar-title ><v-btn text to="/" class="title white--text">ShareYaSpace</v-btn></v-toolbar-title>
       
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only" v-if="!currentUser.firstname">
-        <v-btn text to="/" color="white"><v-icon >mdi-home</v-icon>Home</v-btn>
-        <v-btn text to="/about" color="white"><v-icon >mdi-information-variant</v-icon>About</v-btn>
-        <v-btn text to="/contact" color="white"><v-icon >mdi-contacts</v-icon>Contact</v-btn>
-        
-        
-          <v-btn text to="/login" color="white"><v-icon >mdi-login</v-icon>Login</v-btn>
-           <v-btn color="warning" to="/register"><v-icon >mdi-book-check</v-icon>Register</v-btn>
-          <!-- <div class="ma-3">
-            
-            <v-btn rounded color="warning" ><v-icon color="white" label="Append inner" >mdi-signature-text</v-icon><router-link to="/spacecreate/new">Add your listings</router-link></v-btn>
-          </div> -->
-         
+        <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-xs-only" v-if="!currentUser.firstname">
+          <v-btn text to="/" color="white"><v-icon >mdi-home</v-icon>Home</v-btn>
+          <v-btn text to="/about" color="white"><v-icon >mdi-information-variant</v-icon>About</v-btn>
+          <v-btn text to="/contact" color="white"><v-icon >mdi-contacts</v-icon>Contact</v-btn>
+          
+          
+            <v-btn text to="/login" color="white"><v-icon >mdi-login</v-icon>Login</v-btn>
+            <v-btn color="warning" to="/register"><v-icon >mdi-book-check</v-icon>Register</v-btn>
+            <!-- <div class="ma-3">
+              
+              <v-btn rounded color="warning" ><v-icon color="white" label="Append inner" >mdi-signature-text</v-icon><router-link to="/spacecreate/new">Add your listings</router-link></v-btn>
+            </div> -->
+          
       </v-toolbar-items>
 
       <v-toolbar-items class="hidden-xs-only" v-if="currentUser.firstname">
-        <div class="overflow-hidden">
-              <div class="text-center mb-8">
-                <v-btn
-                  color="deep-purple"
-                  outlined
-                  @click="active = !active"
-                >
-                  Menu
-                </v-btn>
-              </div>
+        
+        <div class="d-flex gap">
+         <div class="col">
+            <v-menu offset-y v-model="selectedItem">
+              <template v-slot:activator="{ on }">
+                
+                  <v-app-bar-nav-icon v-on="on" color="white"></v-app-bar-nav-icon>
+              
+                
+              </template>
+              <v-list class="responsiveMenu">
+                <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="rt">Inbox</router-link></v-list-item-title>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="lser">Notification</router-link></v-list-item-title>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">Favourites</router-link></v-list-item-title>
+                </v-list-item>
+                
+                  <v-divider></v-divider>
+                  <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="l">Host your home</router-link></v-list-item-title>
+                  </v-list-item>
+                  <v-divider></v-divider>
+                  <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="ll">Profile</router-link></v-list-item-title>
+                  </v-list-item>
+                  <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">LogOut</router-link></v-list-item-title>
+                  </v-list-item>
+              </v-list>
+              
+              </v-menu>
+          </div> 
 
-              <v-bottom-navigation
-                v-model="value"
-                :input-value="active"
-                color="indigo"
-              >
-                <v-btn>
-                  <span>Recents</span>
+          <div class="col"><img src="../../assets/images/img1.jpg" class="img-profile"/>
+          </div>
 
-                  <v-icon>mdi-history</v-icon>
-                </v-btn>
+          <div class="col"><h3 class="white--text">{{currentUser.firstname}}</h3>
+          </div>
 
-                <v-btn>
-                  <span>Favorites</span>
-
-                  <v-icon>mdi-heart</v-icon>
-                </v-btn>
-
-                <v-btn>
-                  <span>Nearby</span>
-
-                  <v-icon>mdi-map-marker</v-icon>
-                </v-btn>
-              </v-bottom-navigation>
-            </div>
-        <v-btn text class="heading-1" weight="200">{{currentUser.firstname}}</v-btn>
-        <v-btn @click="logoutUser" text color="white"><v-icon color="white">mdi-logout
-          </v-icon>LogOut</v-btn>
-
-            
+        </div>
+       
+        
+         
 
       </v-toolbar-items>
 
-<div class="hidden-sm-and-up" v-if="!currentUser.firstname">
-  <v-menu offset-y v-model="selectedItem" color="primary">
+      <div class="hidden-sm-and-up" v-if="!currentUser.firstname">
+        <v-menu offset-y v-model="selectedItem" color="primary">
           <template v-slot:activator="{ on }">
             <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
           </template>
@@ -88,16 +95,52 @@
       </div>
 
       <div class="hidden-sm-and-up" v-if="currentUser.firstname">
-        <v-menu offset-y v-model="selectedItem" color="primary">
-          <template v-slot:activator="{ on }">
-            <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
-          </template>
-          <v-list class="responsiveMenu">
-            <v-list-item>
-              <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">Log Out</router-link></v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
+        
+       <div class="d-flex gap">
+         <div class="col">
+            <v-menu offset-y v-model="selectedItem">
+              <template v-slot:activator="{ on }">
+                
+                  <v-app-bar-nav-icon v-on="on" color="white"></v-app-bar-nav-icon>
+              
+                
+              </template>
+              <v-list class="responsiveMenu">
+                <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="rt">Inbox</router-link></v-list-item-title>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="lser">Notification</router-link></v-list-item-title>
+                </v-list-item>
+                <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">Favourites</router-link></v-list-item-title>
+                </v-list-item>
+                
+                  <v-divider></v-divider>
+                  <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="l">Host your home</router-link></v-list-item-title>
+                  </v-list-item>
+                  <v-divider></v-divider>
+                  <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="ll">Profile</router-link></v-list-item-title>
+                  </v-list-item>
+                  <v-list-item>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">LogOut</router-link></v-list-item-title>
+                  </v-list-item>
+              </v-list>
+              
+              </v-menu>
+          </div> 
+
+          <div class="col"><img src="../../assets/images/img1.jpg" class="img-profile"/>
+          </div>
+
+          <div class="col"><h3 class="white--text">{{currentUser.firstname}}</h3>
+          </div>
+
+        </div>
+    
+          
       </div>
   </v-toolbar>
 
@@ -112,6 +155,19 @@
    -->
 </template>
 
+
+
+<style scoped>
+  .img-profile{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+  }
+  .bpl{
+    border-radius: 2px;
+    border: 1px white solid;
+  }
+</style>
 <script>
 import { mapState } from "vuex";
 

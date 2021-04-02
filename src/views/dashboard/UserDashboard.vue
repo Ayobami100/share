@@ -1,10 +1,10 @@
 <template>
 <v-content>
   <v-container>
-    <v-div>
-    <v-div class="" >
+    <div>
+    <div class="" >
       <h1 class="display-1 ma-5">Nearby Places</h1>
-    </v-div>
+    </div>
     
     <v-row  class="fill-height">
       <v-col v-for="nearby in nearbys" :key="nearby.id" cols="4" md="3" sm="3">
@@ -25,7 +25,7 @@
     </v-row>
 
       
-  </v-div>
+  </div>
   </v-container>
 </v-content>
 

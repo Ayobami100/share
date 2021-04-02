@@ -22,7 +22,7 @@
         
         <div class="d-flex gap">
          <div class="col">
-            <v-menu offset-y v-model="selectedItem">
+            <v-menu offset-y>
               <template v-slot:activator="{ on }">
                 
                   <v-app-bar-nav-icon v-on="on" color="white"></v-app-bar-nav-icon>
@@ -31,25 +31,25 @@
               </template>
               <v-list class="responsiveMenu">
                 <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="rt">Inbox</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >Inbox</router-link></v-list-item-title>
                 </v-list-item>
                 <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="lser">Notification</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#">Notification</router-link></v-list-item-title>
                 </v-list-item>
                 <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">Favourites</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#">Favourites</router-link></v-list-item-title>
                 </v-list-item>
                 
                   <v-divider></v-divider>
                   <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="l">Host your home</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#">Host your home</router-link></v-list-item-title>
                   </v-list-item>
                   <v-divider></v-divider>
                   <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="ll">Profile</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >Profile</router-link></v-list-item-title>
                   </v-list-item>
                   <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">LogOut</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >LogOut</router-link></v-list-item-title>
                   </v-list-item>
               </v-list>
               
@@ -70,7 +70,7 @@
       </v-toolbar-items>
 
       <div class="hidden-sm-and-up" v-if="!currentUser.firstname">
-        <v-menu offset-y v-model="selectedItem" color="primary">
+        <v-menu offset-y color="primary">
           <template v-slot:activator="{ on }">
             <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
           </template>
@@ -98,7 +98,7 @@
         
        <div class="d-flex gap">
          <div class="col">
-            <v-menu offset-y v-model="selectedItem">
+            <v-menu offset-y>
               <template v-slot:activator="{ on }">
                 
                   <v-app-bar-nav-icon v-on="on" color="white"></v-app-bar-nav-icon>
@@ -107,25 +107,25 @@
               </template>
               <v-list class="responsiveMenu">
                 <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="rt">Inbox</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >Inbox</router-link></v-list-item-title>
                 </v-list-item>
                 <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="lser">Notification</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >Notification</router-link></v-list-item-title>
                 </v-list-item>
                 <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">Favourites</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#">Favourites</router-link></v-list-item-title>
                 </v-list-item>
                 
                   <v-divider></v-divider>
                   <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="l">Host your home</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >Host your home</router-link></v-list-item-title>
                   </v-list-item>
                   <v-divider></v-divider>
                   <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="ll">Profile</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >Profile</router-link></v-list-item-title>
                   </v-list-item>
                   <v-list-item>
-                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" @click="logoutUser">LogOut</router-link></v-list-item-title>
+                  <v-list-item-title><v-icon color="red">fab fa-home</v-icon><router-link to="#" >LogOut</router-link></v-list-item-title>
                   </v-list-item>
               </v-list>
               

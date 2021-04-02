@@ -53,6 +53,7 @@
 <v-card :loading="loading" class="mx-auto">
     <v-row>
       <v-col v-for="house in houses" :key="house.id" cols="12" md="3">
+         <router-link :to="{name : 'house-watch', params: {id: house.id}}">
           <template slot="progress">
             <v-progress-linear
               color="deep-purple"
@@ -108,7 +109,6 @@
       </v-chip-group>
     </v-card-text> -->
 
-        <router-link to="/login">
         <v-card-actions>
           <v-btn color="deep-purple lighten-2" text>
           View Details

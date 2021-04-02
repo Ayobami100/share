@@ -214,7 +214,7 @@ export default new Vuex.Store({
             id: 1,
               title: "Lanky Bed Space",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Bed Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/bed/1.jpg")
             },
@@ -222,7 +222,7 @@ export default new Vuex.Store({
               id: 2,
               title: "Lanky Bed Space",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Bed Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/bed/2.jpg")
             },
@@ -230,7 +230,7 @@ export default new Vuex.Store({
               id: 3,
               title: "Lanky Bed Space",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Bed Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/bed/3.jpg")
             },
@@ -238,7 +238,7 @@ export default new Vuex.Store({
               id: 4,
               title: "Lanky Bed Space",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Bed Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/bed/4.jpg")
             },
@@ -246,7 +246,7 @@ export default new Vuex.Store({
               id: 5,
               title: "Lanky Bed Space",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Bed Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/bed/5.jpg")
             },
@@ -254,7 +254,7 @@ export default new Vuex.Store({
               id: 6,
               title: "Lanky Bed Space",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Bed Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/bed/6.jpg")
             },
@@ -262,7 +262,7 @@ export default new Vuex.Store({
               id: 7,
               title: "Lanky Bed Space",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Bed Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/bed/7.jpg")
           },
@@ -271,7 +271,7 @@ export default new Vuex.Store({
             id: 8,
             title: "Lanky Bed Space",
             semi:" (413)",
-            subtitle: " Business Space",
+            subtitle: " Bed Space",
             description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
             src: require("../assets/bed/8.jpg")
           }
@@ -281,7 +281,7 @@ export default new Vuex.Store({
             id: 1,
               title: "Lanky Shareable Home",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Shareable Home Space",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/house/1.jpg")
             },
@@ -297,7 +297,7 @@ export default new Vuex.Store({
               id: 3,
               title: "Lanky Shareable Home",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Shareable Home",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/house/1.jpg")
             },
@@ -305,7 +305,7 @@ export default new Vuex.Store({
               id: 4,
               title: "Lanky Shareable Home",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Shareable Home",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/house/1.jpg")
             },
@@ -313,7 +313,7 @@ export default new Vuex.Store({
               id: 5,
               title: "Lanky Shareable Home",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Shareable Home",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/house/1.jpg")
             },
@@ -321,7 +321,7 @@ export default new Vuex.Store({
               id: 6,
               title: "Lanky Shareable Home",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: " Shareable Home",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/house/1.jpg")
             },
@@ -329,7 +329,7 @@ export default new Vuex.Store({
               id: 7,
               title: "Lanky Shareable Home",
               semi:" (413)",
-              subtitle: " Business Space",
+              subtitle: "Shareable Home",
               description: "Small plates, salads & sandwiches. Oshodi, Lagos.",
               src: require("../assets/house/1.jpg")
           }

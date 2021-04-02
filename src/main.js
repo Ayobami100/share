@@ -19,19 +19,21 @@ import VideoWatch from "./views/VideoWatch.vue";
 import Success from "./views/Success"
 import SpaceCreate from "./views/SpaceCreate"
 import './views/axios'
+import { publicPath } from '../vue.config'
+
+
 
 Vue.use(Vuex);
 Vue.config.productionTip = false;
-Vue.config.devtools = false;
 
 Vue.use(VueRouter)
+
 // Vue.use(axios)
 
 // router.start(App,'body');
 
 import './scss/main.scss';
 
-Vue.config.productionTip = false
 
 const router = new VueRouter({
   routes: [
@@ -48,20 +50,20 @@ const router = new VueRouter({
     component: VideoWatch,
     params: true},
 
-    {path: "/open/:id",
-    name: "open-watch",
-    component: VideoWatch,
-    params: true},
+    // {path: "/open/:id",
+    // name: "open-watch",
+    // component: VideoWatch,
+    // params: true},
 
-    {path: "/house/:id",
-    name: "house-watch",
-    component: VideoWatch,
-    params: true},
+    // {path: "/house/:id",
+    // name: "house-watch",
+    // component: VideoWatch,
+    // params: true},
 
-    {path: "/business/:id",
-    name: "business-watch",
-    component: VideoWatch,
-    params: true},
+    // {path: "/business/:id",
+    // name: "business-watch",
+    // component: VideoWatch,
+    // params: true},
    
 
     {path: "/bed",
@@ -96,12 +98,14 @@ const router = new VueRouter({
     },
     
   ],
-  mode: 'history'
+  mode: 'history',
+  base: publicPath,
 })
 
 new Vue({
   router,
   vuetify,
   store,
+  
   render: h => h(App)
 }).$mount('#app')

@@ -53,6 +53,7 @@
 <v-card :loading="loading" class="mx-auto">
     <v-row>
       <v-col v-for="open in opens" :key="open.id" cols="12" md="3">
+         <router-link :to="{name : 'open-watch', params: {id: open.id}}">
           <template slot="progress">
             <v-progress-linear
               color="deep-purple"
@@ -107,7 +108,6 @@
         <v-chip>9:00PM</v-chip>
       </v-chip-group>
     </v-card-text> -->
- <router-link to="/login">
         <v-card-actions>
           <v-btn color="" class="text--primary" text>
            View Details

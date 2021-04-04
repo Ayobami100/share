@@ -53,7 +53,7 @@
 <v-card :loading="loading" class="mx-auto">
     <v-row>
       <v-col v-for="open in opens" :key="open.id" cols="12" md="3">
-         <router-link :to="{name : 'open-watch', params: {id: open.id}}">
+         <router-link :to="{name : 'single-open', params: {id: open.id}}">
           <template slot="progress">
             <v-progress-linear
               color="deep-purple"
@@ -129,7 +129,7 @@ export default {
   //     }
   data() {
     return {
-      opens: this.$store.state.opens,
+      opens: this.$store.state.categories.opens,
       loading: false,
       selection: 1,
     };

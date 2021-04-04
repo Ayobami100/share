@@ -53,7 +53,7 @@
 <v-card :loading="loading" class="mx-auto">
     <v-row>
       <v-col v-for="business in businesses" :key="business.id" cols="12" md="3">
-      <router-link :to="{name : 'business-watch', params: {id: business.id}}">
+      <router-link :to="{name : 'single-business', params: {id: business.id}}">
           <template slot="progress">
             <v-progress-linear
               color="deep-purple"
@@ -125,7 +125,7 @@ export default {
   //     }
   data() {
     return {
-      businesses: this.$store.state.businesses,
+      businesses: this.$store.state.categories.businesses,
       loading: false,
       selection: 1,
     };

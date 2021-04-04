@@ -186,13 +186,16 @@ export default {
     ...mapState(["currentUser"]),
   },
   methods: {
-    logoutUser() {
-      // localStorage.removeItem('token');
+    // ...mapActions([
+    //   logoutUser
+    // ]),
+    // logoutUser() {
+    //   // localStorage.removeItem('token');
 
-      // this.$router.push('/');
-
-      this.$store.dispatch("logoutUser");
-    },
+    //   // this.$router.push('/');
+       
+    //   // this.$store.auth.actions.dispatch("logoutUser");
+    // },
   },
 };
 </script>

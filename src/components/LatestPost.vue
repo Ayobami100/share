@@ -41,7 +41,7 @@ export default {
 
   data() {
     return {
-      groups: this.$store.state.groups,
+      groups: this.$store.state.categories.groups,
     };
   },
 };

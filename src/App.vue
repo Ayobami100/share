@@ -36,7 +36,7 @@ export default {
   }
   },
      mounted(){
-       this.$store.dispatch('loadUsers')
+       this.$store.auth.dispatch('loadUsers')
      }
   
 

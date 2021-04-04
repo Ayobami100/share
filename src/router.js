@@ -12,7 +12,10 @@ import Bed from "./views/Bed.vue";
 import Business from "./views/Business.vue";
 import House from "./views/House.vue";
 import Open from "./views/Open.vue";
-import VideoWatch from "./views/VideoWatch.vue";
+import SingleBed from "./views/SingleBed.vue";
+import SingleBusiness from "./views/SingleBusiness.vue";
+import SingleHouse from "./views/SingleHouse.vue";
+import SingleOpen from "./views/SingleOpen.vue";
 import Success from "./views/Success"
 import SpaceCreate from "./views/SpaceCreate"
 import { publicPath } from '../vue.config'
@@ -33,10 +36,25 @@ export default new VueRouter({
       { path: '*', component: NotFound },
   
       {path: "/bed/:id",
-      name: "bed-watch",
-      component: VideoWatch,
+      name: "single-bed",
+      component: SingleBed,
       params: true},
-  
+     
+      {path: "/open/:id",
+      name: "single-open",
+      component: SingleOpen,
+      params: true},
+     
+      {path: "/business/:id",
+      name: "single-business",
+      component: SingleBusiness,
+      params: true},
+     
+      {path: "/house/:id",
+      name: "single-house",
+      component: SingleHouse,
+      params: true},
+     
       // {path: "/open/:id",
       // name: "open-watch",
       // component: VideoWatch,

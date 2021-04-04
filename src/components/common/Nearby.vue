@@ -53,7 +53,7 @@ export default {
 
   data() {
     return {
-      nearbys: this.$store.state.nearbys,
+      nearbys: this.$store.state.categories.nearbys,
 
       team: [
         { name: "Iyad", role: "web developer", avatar: "/img1.png" },
@@ -74,9 +74,9 @@ export default {
   },
 
   methods: {
-    loginUser(user) {
-      this.$store.dispatch("loginUser", user);
-    },
+    // loginUser(user) {
+      // this.$store.actions.auth.dispatch("loginUser", user);
+    // },
   },
 };
 </script>

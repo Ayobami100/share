@@ -54,7 +54,7 @@
        <v-card :loading="loading" class="mx-auto">
         <v-row>
           <v-col v-for="bed in beds" :key="bed.id" cols="12" md="3">
-            <router-link :to="{name : 'bed-watch', params: {id: bed.id}}">
+            <router-link :to="{name : 'single-bed', params: {id: bed.id}}">
               <template slot="progress">
                 <v-progress-linear
                   color="deep-purple"
@@ -134,7 +134,7 @@ export default {
     },
   data() {
     return {
-      beds: this.$store.state.beds,
+      beds: this.$store.state.categories.beds,
       loading: false,
       selection: 1,
     };

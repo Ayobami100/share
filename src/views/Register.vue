@@ -107,7 +107,6 @@
                                 <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
                               </v-menu>
 
-
                             <v-text-field
                               outlined
                               prepend-inner-icon="mdi-mail"

@@ -1,17 +1,10 @@
 <template>
   <v-app>
-    <!-- <v-app-bar flat max-height="65"> -->
       <Header />
-     
-    <!-- </v-app-bar> -->
-      <!-- <h1>{{this.$route.params.id}}</h1> -->
     <router-view ></router-view>
-
     <v-footer>
       <Footer />
-    </v-footer>
-
-    
+    </v-footer>   
   </v-app>
 </template>
 
@@ -31,8 +24,6 @@ export default {
   data(){
     return{
     user: null,
-
-  
   }
   },
      mounted(){

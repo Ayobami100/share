@@ -163,21 +163,61 @@
       <div><h2 class="text-h3 mb-3 text--primary font-weight-black">$70 / <small>night</small> </h2> </div>
       <v-row no-gutters>
         <v-col cols="6">
-         <v-text-field
-           label="CHECK-IN"
-            placeholder="Add Date"
-            outlined       
+              <v-menu
+                ref="menu1"
+                v-model="menu1"
+                :close-on-content-click="false"
+                transition="scale-transition"
+                offset-y
+                max-width="290px"
+                min-width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+          outlined
+            v-model="registerInfo.DOB"
+            label="Check-in"
+            hint="MM/DD/YYYY format"
+            persistent-hint
+            prepend-inner-icon="event"
+            v-bind="attrs"
+            @blur="date = parseDate(registerInfo.DOB)"
+            v-on="on"
+            placeholder="Add date"
           ></v-text-field>
+        </template>
+        <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
+      </v-menu>
           </v-col>
           <v-col cols="6">
-         <v-text-field
-          label="CHECKOUT"
-            placeholder="Add Date"
-            outlined
+            <v-menu
+                ref="menu11"
+                v-model="menu11"
+                :close-on-content-click="false"
+                transition="scale-transition"
+                offset-y
+                max-width="290px"
+                min-width="290px"
+              >
+                <template v-slot:activator="{ on, attrs }">
+          <v-text-field
+          outlined
+            v-model="registerInfo.DOBs"
+              label="Check-out"
+            placeholder="Add date"
+            hint="MM/DD/YYYY format"
+            persistent-hint
+            prepend-inner-icon="event"
+            v-bind="attrs"
+            @blur="date = parseDate(registerInfo.DOBs)"
+            v-on="on"
           ></v-text-field>
+        </template>
+        <v-date-picker v-model="dates" no-title @input="menu11 = false"></v-date-picker>
+      </v-menu>
           </v-col>
           <v-col cols="12">
-            <v-combobox style="margin-top:-20px"
+            <v-combobox style="margin-top:0px"
           v-model="select"
           :items="item"
           label="Guests"
@@ -203,9 +243,24 @@
 
   </v-col>
   
+<div id="myMap"></div>
+  </v-row>
+<v-row>
+<div>
+<h1 class="headline justify-center font-weight-medium">Location</h1>
+</div>
+<div class="mt-10">
+  <GmapMap
+  :center="{lat:10, lng:10}"
+  :zoom="7"
+  map-type-id="terrain"
+  style="width: 1000px; height: 500px"
+>
+
+</GmapMap>
+</div>
 
   </v-row>
-
 
   </v-container>
 
@@ -258,27 +313,41 @@
 </style>
 
 <script>
+ import Vue from 'vue'
+import * as VueGoogleMaps from 'vue2-google-maps'
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyAsN8iiTZaKZxmT7Idi8gCVT8z91HQ_sgE',
+
+  },
+
+
+})
 export default {
   computed: {
+     computedDateFormatted () {
+        return this.formatDate(this.date)
+      },
     bedy() {
       return this.$store.state.categories.houses.find(bd => bd.id == this.$route.params.id
       );
     },
-    //  homy() {
-    //   return this.$store.state.houses.find(hm => hm.id == this.$route.params.id
-    //   );
-    // },
-    //  busy() {
-    //   return this.$store.state.businesses.find(bs => bs.id == this.$route.params.id
-    //   );
-    // },
-    //  openy() {
-    //   return this.$store.state.opens.find(op => op.id == this.$route.params.id
-    //   );
-    // },
+    
   },
   data() {
     return {
+        registerInfo: {
+        DOB: "",
+        },
+          date: new Date().toISOString().substr(0, 10),
+         
+      DOB: this.formatDate(new Date().toISOString().substr(0, 10)),
+      DOBs: this.formatDate(new Date().toISOString().substr(0, 10)),
+      menu1: false,
+      menu2: false,
+      menu11: false,
+      menu12: false,
         select: [],
         item: [
           'Adults',
@@ -313,11 +382,31 @@ export default {
     };
   },
 
+
+ watch: {
+      date () {
+        this.registerInfo.DOB = this.formatDate(this.date)
+      },
+    },
+
   methods:{
+   
     mounted(){
       // eslint-disable-next-line no-console
       // console.log(bedy.src)
-    }
+    },
+     formatDate (date) {
+        if (!date) return null
+
+        const [year, month, day] = date.split('-')
+        return `${month}/${day}/${year}`
+      },
+      parseDate (date) {
+        if (!date) return null
+
+        const [month, day, year] = date.split('/')
+        return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+      },
   }
 };
 </script>
